@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.1</Version>
+    <Authors>Xavier</Authors>
+    <Company>Holoon</Company>
+    <Description>C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.</Description>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
+    <PackageTags>ProseMirror</PackageTags>
+    <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+  </PropertyGroup>
+
+</Project>
