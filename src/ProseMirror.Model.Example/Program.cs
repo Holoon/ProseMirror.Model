@@ -1,5 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using Newtonsoft.Json;
+using ProseMirror.Serializer;
 
 namespace ProseMirror.Model.Example
 {
@@ -8,10 +9,8 @@ namespace ProseMirror.Model.Example
         static void Main(string[] args)
         {
             var json = File.ReadAllText("example.json");
-            var proseMirrorNode = Serializer.ProseMirrorSerializer
-                .Deserialize(json);
-            var result = Serializer.ProseMirrorSerializer
-                .Serialize(proseMirrorNode);
+            var proseMirrorNode = ProseMirrorSerializer.Deserialize(json, new CustomNodeSelector<ReferenceNode>("reference"));
+            var result = ProseMirrorSerializer.Serialize(proseMirrorNode, true);
         }
     }
     public class Container
@@ -29,5 +28,10 @@ namespace ProseMirror.Model.Example
         public string Text { get; set; }
         public bool? Unknown { get; set; }
         public int? AssignmentId { get; set; }
+    }
+    public class ReferenceNode : CustomNode
+    {
+        [JsonConverter(typeof(InterfaceConverter), typeof(ReferenceAttributes))]
+        public override INodeAttributes Attrs { get; set; }
     }
 }

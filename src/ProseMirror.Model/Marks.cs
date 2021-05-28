@@ -2,9 +2,9 @@
 
 namespace ProseMirror.Model
 {
-    public class Marks
+    public class Marks : IMarks
     {
-        public MarkAttributes Attrs { get; set; }
+        public IMarkAttributes Attrs { get; set; }
         public string Type { get; set; }
         [IgnoreDataMember] public MarkType TypeEnum { get => GetEnum(Type); set => SetEnum(value); }
         private static MarkType GetEnum(string type)

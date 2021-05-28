@@ -2,13 +2,28 @@
 
 namespace ProseMirror.Model
 {
-    public class Node
+    public abstract class Node
     {
-        public NodeAttributes Attrs { get; set; }
+        public readonly static string[] DefaultNodeType = new string[]
+        {
+            "doc",
+            "paragraph",
+            "blockquote",
+            "horizontal_rule",
+            "heading",
+            "code_block",
+            "text",
+            "image",
+            "hard_break",
+            "orderedList",
+            "bulletList",
+            "listItem"
+        };
+        public virtual INodeAttributes Attrs { get; set; }
         public string Type { get; set; }
         [IgnoreDataMember] public NodeType TypeEnum { get => GetEnum(Type); set => SetEnum(value); }
         public Node[] Content { get; set; }
-        public Marks[] Marks { get; set; }
+        public virtual IMarks[] Marks { get; set; }
         public string Text { get; set; }
         private static NodeType GetEnum(string type)
         {
