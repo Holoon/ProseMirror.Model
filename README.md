@@ -13,5 +13,10 @@ If you'd like to contribute, please fork the repository and use a feature branch
 
 **Important notes for pull requests** : please branch from `develop`, not `master`.
 
-## Nuget package 
-TODO
+## Installation 
+
+```
+Install-Package ProseMirror.Model
+```
+
+Nuget package: https://www.nuget.org/packages/ProseMirror.Model/
