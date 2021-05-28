@@ -8,7 +8,7 @@
     <Description>C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.</Description>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
-    <PackageTags>ProseMirror</PackageTags>
+    <PackageTags>ProseMirror C# .NET</PackageTags>
     <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
