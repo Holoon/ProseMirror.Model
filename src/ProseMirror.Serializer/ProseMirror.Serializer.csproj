@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Xavier</Authors>
+    <Company>Holoon</Company>
+    <Description>Tools for serialize or deserialize ProseMirror's content model in C#</Description>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
+    <PackageTags>ProseMirror C# .NET</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
