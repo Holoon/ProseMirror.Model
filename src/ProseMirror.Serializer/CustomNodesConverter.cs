@@ -26,6 +26,7 @@ namespace ProseMirror.Serializer
             serializer.Populate(json.CreateReader(), instance);
             return instance;
         }
+        public override bool CanWrite => false;
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) 
             => throw new NotSupportedException($"It is not necessary to use {nameof(CustomNodesConverter)} when serializing.");
     }
