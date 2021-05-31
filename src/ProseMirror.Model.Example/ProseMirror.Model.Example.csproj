@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProseMirror.Model\ProseMirror.Model.csproj" />
-    <ProjectReference Include="..\ProseMirror.Serializer\ProseMirror.Serializer.csproj" />
+    <PackageReference Include="ProseMirror.Model" Version="1.1.1" />
+    <PackageReference Include="ProseMirror.Serializer" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
