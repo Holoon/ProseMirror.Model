@@ -2,7 +2,7 @@
 
 namespace ProseMirror.Model
 {
-    public class Marks
+    public class Marks 
     {
         public MarkAttributes Attrs { get; set; }
         public string Type { get; set; }
