@@ -14,7 +14,7 @@
             "attrs": {
               "decorationChar": "@",
               "referenceDocUid": "m71yUUjgsGKSaob90rp-2",
-              "text": "@Dev.ArthurDent",
+              "text": "@Human.ArthurDent",
               "unknown": false,
               "assignmentId": 1
             }
@@ -274,5 +274,26 @@
         ]
       }
     ]
-  }
+  },
+  "references": [
+    {
+      "decorationChar": "@",
+      "text": "@Human.CharlesMendez",
+      "assignmentId": 1,
+      "referenceDocUid": "m71yUUjgsGKSaob90rp-2",
+      "entities": [
+        {
+          "entityId": 2,
+          "entityType": 0,
+          "text": "@Human"
+        },
+        {
+          "entityId": 1,
+          "entityType": 3,
+          "text": ".ArthurDent"
+        }
+      ],
+      "unknown": false
+    }
+  ]
 }
