@@ -1,24 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using ProseMirror.Model;
-using System.Collections.Generic;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ProseMirror.Serializer
 {
     public class ProseMirrorSerializer
     {
-        public static string Serialize(Node proseMirrorNode) => JsonConvert.SerializeObject(proseMirrorNode, new JsonSerializerSettings
-        {
-            Formatting = Formatting.Indented,
-            NullValueHandling = NullValueHandling.Ignore,
-            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-            Converters = new List<JsonConverter>() { new StringEnumConverter() }
-        });
-        public static Node Deserialize(string jSon) => JsonConvert.DeserializeObject<Node>(jSon, new JsonSerializerSettings
-        {
-            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-            Converters = new List<JsonConverter>() { new StringEnumConverter() }
-        });
+        public static string Serialize<T>(T value, bool indent = false) 
+            => JsonConvert.SerializeObject(value, new JsonSerializerSettings().UseProseMirror(indent, true));
+        public static T Deserialize<T>(string jSon, params CustomNodeSelector[] customNodeSelectors) 
+            => JsonConvert.DeserializeObject<T>(jSon, new JsonSerializerSettings().UseProseMirror(false, false, customNodeSelectors));
     }
 }

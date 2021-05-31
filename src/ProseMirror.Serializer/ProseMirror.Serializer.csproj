@@ -2,14 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Xavier</Authors>
+    <Company>Holoon</Company>
+    <Description>Tools for serialize or deserialize ProseMirror's content model in C#</Description>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
+    <PackageTags>ProseMirror C# .NET</PackageTags>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ProseMirror.Model\ProseMirror.Model.csproj" />
+    <PackageReference Include="ProseMirror.Model" Version="1.1.1" />
   </ItemGroup>
 
 </Project>
