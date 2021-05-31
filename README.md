@@ -32,14 +32,15 @@ Nuget package: https://www.nuget.org/packages/ProseMirror.Serializer/
 #### Simple use case: 
 
 ```c#
-var json = "{ \"type\": \"doc\", \"content\": [ { \"type\": \"paragraph\", \"content\": [ { \"type\": \"text\", \"text\": \"Hello my first test \" }, ] } ] }";
+var json = "{ \"type\": \"doc\", \"content\": [ { \"type\": \"paragraph\", \"content\": " +
+    "[ { \"type\": \"text\", \"text\": \"Hello my first test \" }, ] } ] }";
 var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json);
 var result = ProseMirrorSerializer.Serialize(proseMirrorNode);
 ```
 
 #### Use case with custom nodes:
 
-*ProseMirror* allow the user to expand his model with custom nodes. For example, the `reference` node bellow is not native to *ProseMirror*:
+*ProseMirror* allow to expand his model with custom nodes. For example, the `reference` node bellow is not native to *ProseMirror*:
 ```json
 {
     "type": "doc",
@@ -53,12 +54,12 @@ var result = ProseMirrorSerializer.Serialize(proseMirrorNode);
         },
         {
             "type": "reference",
-                "attrs": {
-                    "decorationChar": "@",
-                    "referenceDocUid": "m71yUUjgsGKSaob90rp-2",
-                    "text": "@Human.ArthurDent",
-                    "assignmentId": 1
-                }
+            "attrs": {
+                "decorationChar": "@",
+                "referenceDocUid": "m71yUUjgsGKSaob90rp-2",
+                "text": "@Human.ArthurDent",
+                "assignmentId": 1
+            }
         }]
     }]
 }
@@ -80,7 +81,8 @@ public class ReferenceNode : CustomNode
 }
 
 // ...
-var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json, new CustomNodeSelector<ReferenceNode>("reference"));
+var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json, 
+    new CustomNodeSelector<ReferenceNode>("reference"));
 ```
 
 If your custom node implementation need a constructor or need an initialization, you can use the `CustomNodeSelector` overload:
@@ -95,7 +97,8 @@ public class ReferenceNode
 }
 
 // ...
-var proseMirrorNode = ProseMirrorSerializer.Deserialize<Container>(json, new CustomNodeSelector("reference", () => new ReferenceNode(42)));
+var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json, 
+    new CustomNodeSelector("reference", () => new ReferenceNode(42)));
 ```
 
 #### MVC Core Integration or SignalR Integration: 
@@ -137,6 +140,6 @@ public void ConfigureServices(IServiceCollection services)
 Website: https://prosemirror.net/
 
 ## Contributing
-If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are welcome. Please respect existing style in code.
+Pull requests are welcome. If you'd like to contribute, please fork the repository and use a feature branch. Please respect existing style in code.
 
 **Important notes for pull requests** : This project use *GitFlow*, please branch from `develop`, not `master`.
