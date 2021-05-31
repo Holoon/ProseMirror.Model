@@ -3,9 +3,9 @@ using ProseMirror.Model;
 
 namespace ProseMirror.Serializer
 {
-    public abstract class CustomNodeSelector
+    public class CustomNodeSelector
     {
-        protected CustomNodeSelector(string nodeType, Func<CustomNode> nodeActivator)
+        public CustomNodeSelector(string nodeType, Func<CustomNode> nodeActivator)
         {
             NodeType = nodeType;
             NodeActivator = nodeActivator;
