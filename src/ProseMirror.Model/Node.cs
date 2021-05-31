@@ -19,12 +19,9 @@ namespace ProseMirror.Model
             "bulletList",
             "listItem"
         };
-        public virtual INodeAttributes Attrs { get; set; }
         public string Type { get; set; }
         [IgnoreDataMember] public NodeType TypeEnum { get => GetEnum(Type); set => SetEnum(value); }
         public Node[] Content { get; set; }
-        public virtual IMarks[] Marks { get; set; }
-        public string Text { get; set; }
         private static NodeType GetEnum(string type)
         {
             return type switch

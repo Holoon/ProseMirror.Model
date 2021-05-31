@@ -1,6 +1,6 @@
 ﻿namespace ProseMirror.Model
 {
-    public class NodeAttributes : INodeAttributes
+    public class NodeAttributes 
     {
         public int? Level { get; set; }
     }

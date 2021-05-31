@@ -2,8 +2,5 @@
 {
     public abstract class CustomNode : Node
     {
-        public CustomNode()
-        {
-        }
     }
 }
