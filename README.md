@@ -155,7 +155,7 @@ Node node = /*...*/;
 var resultHtml = new CustomHtmlSerializer().ToHtml(node);
 ```
 
-Example of a custom version le `HtmlSerializer`
+Where `CustomHtmlSerializer` can be something like:
 
 ```c#
 public class CustomHtmlSerializer : HtmlSerializer
@@ -169,7 +169,7 @@ public class CustomHtmlSerializer : HtmlSerializer
     }
     private static Html MapReferenceNode(ReferenceNode referenceNode)
     {
-        var tag = Html.TextBloc(referenceNode?.Attrs?.Text, new InlineTag("strong", KeyValuePair.Create("class", "reference")));
+        var tag = Html.TextBlock(referenceNode?.Attrs?.Text, new InlineTag("strong", KeyValuePair.Create("class", "reference")));
         return tag;
     }
 }
