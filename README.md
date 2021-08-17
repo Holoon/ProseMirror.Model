@@ -29,16 +29,18 @@ Nuget package: https://www.nuget.org/packages/ProseMirror.Serializer/
 
 ### Usage
 
-#### Simple use case: 
+#### JSon serialization/deserialization
+
+##### Simple use case: 
 
 ```c#
 var json = "{ \"type\": \"doc\", \"content\": [ { \"type\": \"paragraph\", \"content\": " +
     "[ { \"type\": \"text\", \"text\": \"Hello my first test \" }, ] } ] }";
-var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json);
-var result = ProseMirrorSerializer.Serialize(proseMirrorNode);
+var proseMirrorNode = Serializer.JSon.JSonSerializer.Deserialize<Node>(json);
+var result = Serializer.JSon.JSonSerializer.Serialize(proseMirrorNode);
 ```
 
-#### Use case with custom nodes:
+##### Use case with custom nodes:
 
 *ProseMirror* allow to expand his model with custom nodes. For example, the `reference` node bellow is not native to *ProseMirror*:
 ```json
@@ -101,7 +103,7 @@ var proseMirrorNode = ProseMirrorSerializer.Deserialize<Node>(json,
     new CustomNodeSelector("reference", () => new ReferenceNode(42)));
 ```
 
-#### MVC Core Integration or SignalR Integration: 
+##### MVC Core Integration or SignalR Integration: 
 
 ```c#
 // MVC Core:
@@ -133,6 +135,43 @@ public void ConfigureServices(IServiceCollection services)
     {
         opt.PayloadSerializerSettings.UseProseMirror();
     });
+}
+```
+
+#### HTML serialization
+
+##### Simple use case: 
+
+```c#
+Node node = /*...*/;
+var resultHtml = ProseMirror.Serializer.Html.HtmlSerializer.Serialize(node);
+```
+
+##### Use case with custom nodes:
+To serialize *ProseMirror* custom nodes or change the default behavior, it is possible to override the `HtmlSerializer`:
+
+```c#
+Node node = /*...*/;
+var resultHtml = new CustomHtmlSerializer().ToHtml(node);
+```
+
+Example of a custom version le `HtmlSerializer`
+
+```c#
+public class CustomHtmlSerializer : HtmlSerializer
+{
+    protected override Html MapCustom<TNode>(CustomNode custom, TNode rootNode) 
+    {
+        if (custom is ReferenceNode referenceNode)
+            return MapReferenceNode(referenceNode);
+
+        return base.MapCustom(custom, rootNode);
+    }
+    private static Html MapReferenceNode(ReferenceNode referenceNode)
+    {
+        var tag = Html.TextBloc(referenceNode?.Attrs?.Text, new InlineTag("strong", KeyValuePair.Create("class", "reference")));
+        return tag;
+    }
 }
 ```
 
