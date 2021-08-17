@@ -46,7 +46,7 @@ namespace ProseMirror.Serializer.Html
                 NodeType.HorizontalRule => HtmlPart.HorizontalRule(),
                 NodeType.Heading => HtmlPart.Heading(node?.Attrs?.Level),
                 NodeType.CodeBlock => HtmlPart.CodeBlock(),
-                NodeType.Text => HtmlPart.TextBloc(node?.Text, MarksToAttributes(node?.Marks)?.ToArray()),
+                NodeType.Text => HtmlPart.TextBlock(node?.Text, MarksToAttributes(node?.Marks)?.ToArray()),
                 NodeType.Image => HtmlPart.Image(node?.Attrs?.Src, node?.Attrs?.Alt, node?.Attrs?.Title),
                 NodeType.HardBreak => HtmlPart.HardBreak(),
                 NodeType.OrderedList => HtmlPart.OrderedList(),
