@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProseMirror.Serializer
+namespace ProseMirror.Serializer.JSon
 {
-    public class ProseMirrorSerializer
+    public class JSonSerializer
     {
         public static string Serialize<T>(T value, bool indent = false) 
             => JsonConvert.SerializeObject(value, new JsonSerializerSettings().UseProseMirror(indent, true));
