@@ -7,26 +7,13 @@ namespace ProseMirror.Model.Example
     {
         static void Main(string[] args)
         {
+            // NOTE: C# object <-> JSon example
             var json = File.ReadAllText("example.json");
-            var proseMirrorNode = ProseMirrorSerializer.Deserialize<Container>(json, new CustomNodeSelector<ReferenceNode>("reference"));
-            var result = ProseMirrorSerializer.Serialize(proseMirrorNode, true);
+            var proseMirrorNode = Serializer.JSon.JSonSerializer.Deserialize<Container>(json, new CustomNodeSelector<ReferenceNode>("reference"));
+            var resultJSon = Serializer.JSon.JSonSerializer.Serialize(proseMirrorNode, true);
+
+            // NOTE: C# object -> HTML example
+            var resultHtml = new CustomHtmlSerializer().ToHtml(proseMirrorNode.Content, proseMirrorNode.References);
         }
-    }
-    public class Container
-    {
-        public Node Content { get; set; }
-        public object[] References { get; set; }
-    }
-    public class ReferenceAttributes 
-    {
-        public string DecorationChar { get; set; }
-        public string ReferenceDocUid { get; set; }
-        public string Text { get; set; }
-        public bool? Unknown { get; set; }
-        public int? AssignmentId { get; set; }
-    }
-    public class ReferenceNode : CustomNode
-    {
-        public ReferenceAttributes Attrs { get; set; }
     }
 }

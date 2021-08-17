@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using ProseMirror.Serializer;
+using ProseMirror.Serializer.JSon;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class ProseMirrorSerializerExtensions
+    public static class JSonSerializerExtensions
     {
         public static JsonSerializerSettings UseProseMirror(this JsonSerializerSettings settings,
             bool indent = false, bool ignoreNullValue = false, params CustomNodeSelector[] customNodeSelectors)

@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using ProseMirror.Model;
 using System.Linq;
 
-namespace ProseMirror.Serializer
+namespace ProseMirror.Serializer.JSon
 {
     public class CustomNodesConverter : JsonConverter
     {
