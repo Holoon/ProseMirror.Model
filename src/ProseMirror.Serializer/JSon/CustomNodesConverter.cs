@@ -15,7 +15,7 @@ namespace ProseMirror.Serializer.JSon
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var json = JObject.Load(reader);
-            var typeValue = json.Property("type").Value.ToString();
+            var typeValue = (json.Property("type") ?? json.Property("Type")).Value.ToString();
             if (Node.DefaultNodeType.Contains(typeValue))
                 return serializer.Deserialize(json.CreateReader(), typeof(StandardNode));
 
