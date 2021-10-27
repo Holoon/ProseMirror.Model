@@ -52,7 +52,7 @@ namespace ProseMirror.Serializer.Html
                 NodeType.OrderedList => HtmlPart.OrderedList(),
                 NodeType.BulletList => HtmlPart.BulletList(),
                 NodeType.ListItem => HtmlPart.ListItem(),
-                _ => throw new ArgumentException($"Value \"{node?.TypeEnum}\" is not supported for \"{nameof(node.TypeEnum)}\""),
+                _ => throw new ArgumentException($"Value \"{node?.TypeEnum}\" (\"{node?.Type}\") is not supported for \"{nameof(node.TypeEnum)}\""),
             };
             return tag;
         }
