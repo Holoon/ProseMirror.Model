@@ -20,10 +20,10 @@ namespace Microsoft.Extensions.DependencyInjection
             var customNodesConverter = new CustomNodesConverter();
             foreach (var customNodeSelector in customNodeSelectors)
                 customNodesConverter.CustomNodeSelectors.Add(customNodeSelector?.NodeType, customNodeSelector?.NodeActivator);
-            settings.Converters = new List<JsonConverter>
-            {
-                customNodesConverter
-            };
+            settings.Converters ??= new List<JsonConverter>();
+            if (settings.Converters.IsReadOnly)
+                settings.Converters = new List<JsonConverter>(settings.Converters);
+            settings.Converters.Add(customNodesConverter);
 
             return settings;
         }
