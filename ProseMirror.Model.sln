@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProseMirror.Model.Example",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProseMirror.Serializer", "src\ProseMirror.Serializer\ProseMirror.Serializer.csproj", "{7702DE97-00F4-4870-B222-923F42845A0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProseMirror.Serializer.SystemTextJson", "ProseMirror.Serializer.SystemTextJson\ProseMirror.Serializer.SystemTextJson.csproj", "{9DBACC55-92A3-49A4-AD99-FFCB123128CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7702DE97-00F4-4870-B222-923F42845A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7702DE97-00F4-4870-B222-923F42845A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7702DE97-00F4-4870-B222-923F42845A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBACC55-92A3-49A4-AD99-FFCB123128CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBACC55-92A3-49A4-AD99-FFCB123128CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBACC55-92A3-49A4-AD99-FFCB123128CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBACC55-92A3-49A4-AD99-FFCB123128CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

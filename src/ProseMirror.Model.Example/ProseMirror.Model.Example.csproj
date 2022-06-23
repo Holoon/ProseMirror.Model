@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ProseMirror.Serializer.SystemTextJson\ProseMirror.Serializer.SystemTextJson.csproj" />
     <ProjectReference Include="..\ProseMirror.Model\ProseMirror.Model.csproj" />
     <ProjectReference Include="..\ProseMirror.Serializer\ProseMirror.Serializer.csproj" />
   </ItemGroup>
