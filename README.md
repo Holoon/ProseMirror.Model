@@ -179,6 +179,4 @@ public class CustomHtmlSerializer : HtmlSerializer
 Website: https://prosemirror.net/
 
 ## Contributing
-Pull requests are welcome. If you'd like to contribute, please fork the repository and use a feature branch. Please respect existing style in code.
-
-**Important notes for pull requests** : This project use *GitFlow*, please branch from `develop`, not `master`.
+If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are welcome. Please respect existing style in code.
