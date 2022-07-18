@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Authors>Xavier</Authors>
     <Company>Holoon</Company>
     <Description>Tools for serialize or deserialize ProseMirror's content model in C#</Description>
@@ -10,7 +10,7 @@
     <RepositoryType>GitHub</RepositoryType>
     <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
     <PackageTags>ProseMirror C# .NET</PackageTags>
-    <Version>2.0.4</Version>
+    <Version>2.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
