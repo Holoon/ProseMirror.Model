@@ -1,6 +1,5 @@
-﻿namespace ProseMirror.Model
+﻿namespace ProseMirror.Model;
+
+public abstract class CustomNode : Node
 {
-    public abstract class CustomNode : Node
-    {
-    }
 }

@@ -1,14 +1,13 @@
-﻿namespace ProseMirror.Model
+﻿namespace ProseMirror.Model;
+
+public enum MarkType
 {
-    public enum MarkType
-    {
-        Bold, 
-        Italic, 
-        Link, 
-        Strike, 
-        Em, 
-        Strong, 
-        Code,
-        Custom
-    }
+    Bold, 
+    Italic, 
+    Link, 
+    Strike, 
+    Em, 
+    Strong, 
+    Code,
+    Custom
 }

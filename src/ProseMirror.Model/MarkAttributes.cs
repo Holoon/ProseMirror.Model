@@ -1,9 +1,8 @@
-﻿namespace ProseMirror.Model
+﻿namespace ProseMirror.Model;
+
+public class MarkAttributes
 {
-    public class MarkAttributes
-    {
-        public string Href { get; set; }
-        public string Target { get; set; }
-        public string Title { get; set; }
-    }
+    public string Href { get; set; }
+    public string Target { get; set; }
+    public string Title { get; set; }
 }

@@ -1,19 +1,18 @@
-﻿namespace ProseMirror.Model
+﻿namespace ProseMirror.Model;
+
+public enum NodeType
 {
-    public enum NodeType
-    {
-        Doc,
-        Paragraph,
-        Blockquote,
-        HorizontalRule,
-        Heading,
-        CodeBlock,
-        Text,
-        Image,
-        HardBreak,
-        OrderedList,
-        BulletList,
-        ListItem,
-        Custom
-    }
+    Doc,
+    Paragraph,
+    Blockquote,
+    HorizontalRule,
+    Heading,
+    CodeBlock,
+    Text,
+    Image,
+    HardBreak,
+    OrderedList,
+    BulletList,
+    ListItem,
+    Custom
 }

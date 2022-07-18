@@ -1,21 +1,20 @@
 ﻿using System;
 using ProseMirror.Model;
 
-namespace ProseMirror.Serializer
+namespace ProseMirror.Serializer;
+
+public class CustomNodeSelector
 {
-    public class CustomNodeSelector
+    public CustomNodeSelector(string nodeType, Func<CustomNode> nodeActivator)
     {
-        public CustomNodeSelector(string nodeType, Func<CustomNode> nodeActivator)
-        {
-            NodeType = nodeType;
-            NodeActivator = nodeActivator;
-        }
-        public string NodeType { get; set; }
-        public Func<CustomNode> NodeActivator { get; set; }
+        NodeType = nodeType;
+        NodeActivator = nodeActivator;
     }
-    public class CustomNodeSelector<TNode> : CustomNodeSelector
-        where TNode : CustomNode, new()
-    {
-        public CustomNodeSelector(string nodeType) : base(nodeType, () => new TNode()) { }
-    }
+    public string NodeType { get; set; }
+    public Func<CustomNode> NodeActivator { get; set; }
+}
+public class CustomNodeSelector<TNode> : CustomNodeSelector
+    where TNode : CustomNode, new()
+{
+    public CustomNodeSelector(string nodeType) : base(nodeType, () => new TNode()) { }
 }
