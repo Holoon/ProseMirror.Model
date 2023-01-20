@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Authors>Xavier</Authors>
-    <Company>Holoon</Company>
-    <Description>Tools for serialize or deserialize ProseMirror's content model in C#</Description>
-    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
-    <RepositoryType>GitHub</RepositoryType>
-    <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
-    <PackageTags>ProseMirror C# .NET</PackageTags>
-    <Version>2.1.0</Version>
+    <TargetFramework>net7.0</TargetFramework>
+	  <Version>2.2.0</Version>
+	  <Authors>Xavier</Authors>
+	  <Company>Holoon</Company>
+	  <Description>Tools for serialize or deserialize ProseMirror's content model in C#</Description>
+	  <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/Holoon/ProseMirror.Model</PackageProjectUrl>
+	  <RepositoryType>GitHub</RepositoryType>
+	  <RepositoryUrl>https://github.com/Holoon/ProseMirror.Model</RepositoryUrl>
+	  <PackageTags>ProseMirror C# .NET</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Holoon.HtmlBuilder" Version="1.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Holoon.HtmlBuilder" Version="1.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
