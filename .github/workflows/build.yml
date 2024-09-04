@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+      - 'releases/**'
+      
+jobs:
+  build:
+    name: Build and analyze
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Install dependencies
+        run: dotnet restore ProseMirror.Model.sln -s https://api.nuget.org/v3/index.json
+
+      - name: Sonarqube Begin
+        run: | 
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /k:${{ secrets.SONAR_PROJECT_KEY }} /d:sonar.token=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url=${{ secrets.SONAR_HOST_URL }}
+
+      - name: Build
+        run: dotnet build ProseMirror.Model.sln
+
+      - name: Sonarqube end
+        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        
